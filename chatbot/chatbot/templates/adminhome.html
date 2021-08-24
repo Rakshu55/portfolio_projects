@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <title>QA System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="keywords" content="Directory Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+	SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/blog.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/timeline.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
+      <!-- online-fonts -->
+    <link href="//fonts.googleapis.com/css?family=Libre+Franklin:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- header -->
+    <header>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light p-0">
+                <h1><a class="navbar-brand text-center" href="/">
+                        <span>Q</span>QA System
+                    </a></h1><!--<h3 style="color: #00d255;">TripAdvisor</h3>-->
+                <button class="navbar-toggler ml-lg-auto ml-sm-5 bg-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav text-center mx-auto">
+                        <li class="nav-item active  mr-lg-4 mt-lg-0 mt-sm-4 mt-3">
+                            <a class="hover-fill" href="/adminhome" data-txthover="Home">Home</a>
+                        </li>
+                        <li class="nav-item  mr-lg-4 mt-lg-0 mt-sm-4 mt-3">
+                            <a class="hover-fill" href="/stats" data-txthover="Stats">Stats</a>
+                        </li>
+                        <li class="nav-item  mr-lg-4 mt-lg-0 mt-sm-4 mt-3">
+                            <a class="hover-fill" href="/userstats" data-txthover="User Stats">User stats</a>
+                        </li>
+                    </ul>
+                    <a href="/alogout"><button type="button" class="btn bg-theme w3ls-btn text-uppercase font-weight-bold d-block" data-toggle="modal"  aria-pressed="false" data-target="#exampleModal">
+                        LOGOUT
+                    </button></a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- //header -->
+    <!-- banner -->
+    <div class="container-fluid banner-w3pvt-bg">
+        <div class="row">
+            <div class="col-lg-8">
+                <div id="home" class="banner-w3pvt  d-flex align-items-center">
+                    <div class="container">
+                        <div class="d-flex flex-column">
+                            <div class="bnr-txt-w3pvt  d-sm-flex justify-content-center align-items-center">
+                                <div class="bnr-w3pvt-txt text-center">
+                                    <h3>QA System</h3>
+                                        <div class="d-flex justify-content-between bnr-sub-txt align-items-center">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 banner2-w3pvt"></div>
+        </div>
+    </div>
+    <!-- //banner -->
+    <footer>
+        <div class="container">
+            <div class="d-lg-flex justify-content-between align-items-center copy-right-wthree">
+                <h2><a class="navbar-brand text-center" href="index.html">
+                        <span>Q</span>QA System
+                    </a></h2>
+                <div class="cpy-right text-center">
+                    <p class="text-white">© 2018 Directory. All rights reserved | Design by
+<!--                        <a href="http://w3layouts.com" class="text-theme"> W3layouts.</a>-->
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- //footer -->
+
+    <!-- js -->
+    <script src="{{ url_for('static', filename='js/jquery-2.2.3.min.js')}}"></script>
+    <!-- script for password match -->
+    <!-- //js -->
+    <script src="{{ url_for('static', filename='js/move-top.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/easing.js')}}"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 1000);
+            });
+        });
+    </script>
+    <!-- //end-smooth-scrolling -->
+    <!-- smooth-scrolling-of-move-up -->
+    <script>
+        $(document).ready(function () {
+            /*
+            var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear'
+            };
+            */
+
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
+
+        });
+    </script>
+    <script src="{{ url_for('static', filename='js/SmoothScroll.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+</body>
+</html>

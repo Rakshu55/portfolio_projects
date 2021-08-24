@@ -1,0 +1,63 @@
+{% extends 'header.html'%}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bot.css') }}">
+<!-- inner banner -->
+    <div class="inner-banner-w3ls d-flex align-items-center text-center">
+        <div class="container">
+            <h6 class="agileinfo-title">Recommended PLACES</h6>
+        </div>
+    </div>
+    <div align="right"><br>Welcome {{user}}&emsp;&emsp;<br></div><br><br>
+<!-- //inner banner -->
+<!-- Default form  -->
+    <section class="wthree-row w3-gallery cliptop-portfolio-wthree" id="portfolio">
+        <div class="container">
+            <h3>Recommended by age</h3><hr>
+            <ul class="demo row">
+                {% for img in rec_placesby_age %}
+                <li class="col-lg-4 col-sm-6">
+                    <div class="gallery-grid1" style="background: url('static/TripDataset/{{img[9]}}'); background-repeat:no-repeat; background-size: cover; height:200px;width:100% ">
+                    </div>
+                    <div class="p-mask"><br>
+                            <h4>{{img[7]}}</h4>
+                            <h5>{{img[8]}}</h5>
+                            <hr>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div><hr>
+        <div class="container">
+            <h3>Recommended by Budget</h3><hr>
+            <ul class="demo row">
+                {% for img in rec_placesby_budget %}
+                <li class="col-lg-4 col-sm-6">
+                    <div class="gallery-grid1" style="background: url('static/TripDataset/{{img[9]}}'); background-repeat:no-repeat; background-size: cover; height:200px;width:100% ">
+                    </div>
+                    <div class="p-mask"><br>
+                            <h4>{{img[7]}}</h4>
+                            <h5>{{img[8]}}</h5>
+                            <hr>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div><hr>
+        <div class="container">
+            <h3>Recommended by Gender</h3><hr>
+            <ul class="demo row">
+                {% for img in rec_placesby_gender %}
+                <li class="col-lg-4 col-sm-6">
+                    <div class="gallery-grid1" style="background: url('static/TripDataset/{{img[9]}}'); background-repeat:no-repeat; background-size: cover; height:200px;width:100% ">
+                    </div>
+                    <div class="p-mask"><br>
+                            <h4>{{img[7]}}</h4>
+                            <h5>{{img[8]}}</h5>
+                            <hr>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+{% endblock %}

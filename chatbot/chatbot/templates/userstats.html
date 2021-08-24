@@ -1,0 +1,53 @@
+{% extends 'aheader.html'%}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bot.css') }}">
+<!-- inner banner -->
+    <div class="inner-banner-w3ls d-flex align-items-center text-center">
+        <div class="container">
+            <h6 class="agileinfo-title">User Stats</h6>
+        </div>
+    </div>
+    <div align="right"><br>Welcome {{uname}}&emsp;&emsp;</div>
+<!-- //inner banner -->
+<!-- Default form  -->
+    <section>
+        <br><br>
+        <div class="container">
+            <div class="col-lg-12">
+                <div id="chartContainer" align="center" style="height: 300px; width: 70%;">
+                </div>
+            </div>
+			<br>
+        </div>
+        <br><br>
+
+    </section>
+
+<script type="text/javascript">
+	window.onload = function () {
+	var chart = new CanvasJS.Chart("chartContainer",
+	{
+    	title:{
+        text: "Bar Graph"
+      	},
+      	data: [
+      	{
+        	dataPoints: [
+        	    {% set count = namespace(value=1) %}
+        	    {% for res, c in counts.items() %}
+                    { x: {{ count.value }}, y: {{c}}, label: "{{res}}"},
+                    {% set count.value = count.value + 1 %}
+                {% endfor %}
+                { x: {{ count.value }}, y: 0, label: "a"}
+        	]
+      	}
+      	]
+    });
+
+    chart.render();
+  }
+  </script>
+  <script type="text/javascript" src="{{url_for('static', filename='js/canvasjs.min.js')}}"></script>
+
+
+{% endblock %}
